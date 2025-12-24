@@ -40,7 +40,7 @@ interface CartItem extends Product {
   selectedExtras?: string[];
 }
 
-export function OrderPage({ onNavigate }: OrderPageProps) {
+export function OrderPage(_props: OrderPageProps) {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedLocation, setSelectedLocation] = useState('downtown');
@@ -187,7 +187,7 @@ export function OrderPage({ onNavigate }: OrderPageProps) {
       // Add extras cost
       if (item.selectedExtras && item.customizations?.extras) {
         item.selectedExtras.forEach((extraName) => {
-          const extra = item.customizations.extras?.find((e) => e.name === extraName);
+          const extra = item.customizations?.extras?.find((e) => e.name === extraName);
           if (extra) itemPrice += extra.price;
         });
       }

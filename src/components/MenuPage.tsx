@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Star, Flame, Droplet, Milk, Wheat, Nut } from 'lucide-react';
+import { Star, Milk, Wheat, Nut } from 'lucide-react';
 import { Badge } from './ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Button } from './ui/button';
@@ -22,7 +22,6 @@ interface MenuItem {
 
 export function MenuPage({ onNavigate }: MenuPageProps) {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
-  const [showNutrition, setShowNutrition] = useState(false);
 
   const espressoBar: MenuItem[] = [
     { 
